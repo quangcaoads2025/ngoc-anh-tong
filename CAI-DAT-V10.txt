@@ -1,0 +1,10 @@
+NGỌC ANH CMS V10 - GIỮ NGUYÊN GIAO DIỆN V7
+
+1. Mở supabase-config.js.
+2. Dán Publishable key vào PASTE_SUPABASE_PUBLISHABLE_KEY_HERE.
+3. Không dùng khóa máy chủ đặc quyền.
+4. Chạy supabase-setup-v9.sql trong Supabase SQL Editor nếu chưa hoàn tất.
+5. Upload toàn bộ FILE BÊN TRONG thư mục này lên root GitHub Pages.
+6. Dashboard: /admin/
+
+Giao diện, nội dung và assets V7 được giữ nguyên. Chỉ bổ sung data-cms và các script kết nối Supabase.

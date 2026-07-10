@@ -159,33 +159,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const submitButton = form.querySelector('button[type="submit"]');
     submitButton.disabled = true;
-    const supabaseReady = window.NA_SUPABASE && window.supabase &&
-      /^https:\/\/[a-z0-9-]+\.supabase\.co$/.test(String(window.NA_SUPABASE.url || "")) &&
-      String(window.NA_SUPABASE.publishableKey || "").startsWith("sb_publishable_");
-    formStatus.textContent = "Đang gửi yêu cầu...";
+    formStatus.textContent = FORM_ENDPOINT ? "Đang gửi yêu cầu..." : "Đang kiểm tra kết nối...";
 
     try {
-      if (supabaseReady) {
-        const client = window.supabase.createClient(window.NA_SUPABASE.url, window.NA_SUPABASE.publishableKey, { auth: { persistSession: true, autoRefreshToken: true } });
-        const { error } = await client.from("leads").insert({
-          full_name: payload.name,
-          phone: payload.phone,
-          area: payload.area,
-          product_interest: payload.interest,
-          message: payload.message,
-          source: payload.source
-        });
-        if (error) throw error;
-      } else if (FORM_ENDPOINT) {
-        const response = await fetch(FORM_ENDPOINT, {
-          method: "POST",
-          headers: { "Content-Type": "text/plain;charset=utf-8" },
-          body: JSON.stringify(payload)
-        });
-        if (!response.ok) throw new Error("SUBMIT_FAILED");
-      } else {
+      if (!FORM_ENDPOINT) {
         throw new Error("FORM_ENDPOINT_NOT_CONFIGURED");
       }
+
+      const response = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload)
+      });
+      if (!response.ok) throw new Error("SUBMIT_FAILED");
 
       formStatus.classList.add("success");
       formStatus.textContent = "Đã gửi yêu cầu. Đội ngũ tư vấn sẽ liên hệ theo thông tin bạn cung cấp.";

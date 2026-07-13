@@ -1562,3 +1562,90 @@ h1 em,h2 em{color:var(--red);font-style:normal}
 .flash-card--poster .flash-card__media{background:#06132c;}
 .flash-card--poster .flash-card__media img{object-position:center;}
 .flash-grid--motorbike .flash-card__media{min-height:220px;}
+
+
+/* ===== FLASH SALE: TAB Ô TÔ / XE MÁY DẠNG GỌN ===== */
+.flash-toolbar{
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+}
+.flash-tabs{
+  display:inline-flex!important;
+  width:auto!important;
+  gap:4px!important;
+  padding:5px!important;
+  border:1px solid #fdba74!important;
+  border-radius:16px!important;
+  background:#fff!important;
+  box-shadow:0 8px 22px rgba(249,115,22,.08)!important;
+}
+.flash-tab{
+  min-width:0!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:9px!important;
+  padding:11px 18px!important;
+  border:0!important;
+  border-radius:11px!important;
+  background:transparent!important;
+  color:#344054!important;
+  text-align:center!important;
+  transform:none!important;
+  box-shadow:none!important;
+}
+.flash-tab:hover{
+  background:#fff7ed!important;
+}
+.flash-tab b{
+  color:inherit!important;
+  font-size:14px!important;
+  line-height:1!important;
+  font-weight:850!important;
+  white-space:nowrap!important;
+}
+.flash-tab em{
+  min-width:22px!important;
+  height:22px!important;
+  display:grid!important;
+  place-items:center!important;
+  padding:0 6px!important;
+  border-radius:999px!important;
+  background:#f2f4f7!important;
+  color:#475467!important;
+  font-size:10px!important;
+  line-height:1!important;
+  font-style:normal!important;
+  font-weight:900!important;
+}
+.flash-tab.is-active{
+  background:linear-gradient(135deg,#ff4d2e,#ff6a2f)!important;
+  color:#fff!important;
+  box-shadow:0 8px 18px rgba(255,77,46,.22)!important;
+}
+.flash-tab.is-active em{
+  background:rgba(255,255,255,.22)!important;
+  color:#fff!important;
+}
+.flash-phone{
+  padding:8px 10px!important;
+}
+@media(max-width:680px){
+  .flash-toolbar{align-items:flex-start!important}
+  .flash-tabs{
+    display:inline-flex!important;
+    grid-template-columns:none!important;
+    width:auto!important;
+    max-width:100%!important;
+  }
+  .flash-tab{
+    flex:0 1 auto!important;
+    padding:10px 15px!important;
+  }
+  .flash-tab b{font-size:13px!important}
+  .flash-tab em{min-width:21px!important;height:21px!important;font-size:9px!important}
+}

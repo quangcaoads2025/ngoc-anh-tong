@@ -1,0 +1,9 @@
+HƯỚNG DẪN QUẢN LÝ FLASH SALE
+
+1. Mở file flash-products.js.
+2. Mỗi khối {...} là một sản phẩm ưu đãi.
+3. category: "car" là ô tô; category: "motorbike" là xe máy.
+4. active: true để hiển thị; active: false để tạm ẩn.
+5. Sửa name, offerValue, description, note, image và buttonText theo chương trình mới.
+6. Hiện tại website có 8 chương trình ô tô (3 VinFast + 5 BYD) và đúng 4 mẫu xe máy.
+7. Phần danh sách “Xem toàn bộ ưu đãi xe máy” đã được loại bỏ hoàn toàn.
